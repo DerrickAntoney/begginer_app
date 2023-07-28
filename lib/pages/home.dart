@@ -141,11 +141,51 @@ class ButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: <Widget>[
         Row(
           children: <Widget>[
-            Padding(padding: EdgeInsets.all(16.0)),
+            const Padding(padding: EdgeInsets.all(16.0)),
+            TextButton(
+              onPressed: () {},
+              child: const Icon(Icons.flag),
+            )
+          ],
+        ),
+        const Divider(),
+        Row(
+          children: <Widget>[
+            const Padding(padding: EdgeInsets.all(16.0)),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.flight),
+            ),
+            const Padding(padding: EdgeInsets.all(16.0)),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.flight),
+              iconSize: 42.0,
+              color: Colors.lightGreen,
+              tooltip: 'Flight',
+            )
+          ],
+        ),
+        const Divider(),
+        Row(
+          children: <Widget>[
+            const Padding(padding: EdgeInsets.all(16.0)),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Icon(Icons.save),
+            ),
+            const Padding(padding: EdgeInsets.all(16.0)),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Icon(
+                Icons.save,
+                color: Colors.lightGreen,
+              ),
+            )
           ],
         )
       ],
@@ -182,8 +222,9 @@ class _HomeState extends State<Home> {
             Icon(Icons.pause),
             Icon(Icons.stop),
             Icon(Icons.access_time),
-            Padding(padding: EdgeInsets.all(32.0),),
-
+            Padding(
+              padding: EdgeInsets.all(32.0),
+            ),
           ],
         ),
       ),
@@ -208,8 +249,8 @@ class _HomeState extends State<Home> {
           ),
         ),
         bottom: const PopupMenuButtonWidget(),
-        ),
-      body:  const Padding(
+      ),
+      body: const Padding(
         padding: EdgeInsets.all(16.0),
         child: SafeArea(
           child: SingleChildScrollView(
