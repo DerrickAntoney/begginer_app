@@ -148,8 +148,16 @@ class ButtonWidget extends StatelessWidget {
             const Padding(padding: EdgeInsets.all(16.0)),
             TextButton(
               onPressed: () {},
-              child: const Icon(Icons.flag),
-            )
+              child: const Text('Flag'),
+            ),
+            const Padding(padding: EdgeInsets.all(16.0)),
+            TextButton(
+              onPressed: () {},
+              child: const Icon(
+                Icons.flag,
+                color: Colors.lightGreen,
+              ),
+            ),
           ],
         ),
         const Divider(),
@@ -198,7 +206,27 @@ class ButtonBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+        color: Colors.white70,
+        child: ButtonBar(
+          alignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.flag),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.airport_shuttle,
+            ),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.brush),
+              highlightColor: Colors.purple,
+            )
+          ],
+        ));
   }
 }
 
