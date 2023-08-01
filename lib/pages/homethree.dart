@@ -21,9 +21,9 @@ class ImageAndIconWidget extends StatelessWidget {
           size: 48.0,
         ),
         Image(
-          image: const AssetImage('assets/images/savingbowl.png'),
-          fit: BoxFit.cover,
-          width: MediaQuery.of(context).size.width/3 ),
+            image: const AssetImage('assets/images/savingbowl.png'),
+            fit: BoxFit.cover,
+            width: MediaQuery.of(context).size.width / 3),
         const Icon(
           Icons.brush,
           color: Colors.lightBlue,
@@ -39,7 +39,22 @@ class BoxDecorationWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row();
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Container(
+        width: 100,
+        height: 100,
+        decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+            color: Colors.orange,
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.grey,
+                  blurRadius: 10.0,
+                  offset: Offset(0.0, 10.0))
+            ]),
+      ),
+    );
   }
 }
 
@@ -48,24 +63,7 @@ class InputDecoratorsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Container(
-        width: 100,
-        height: 100,
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
-          color: Colors.orange,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey,
-              blurRadius: 10.0,
-              offset: Offset(0.0, 10.0)
-            )
-          ]
-        ),
-      ),
-    );
+    return const Row();
   }
 }
 
