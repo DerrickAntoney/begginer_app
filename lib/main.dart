@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'pages/home.dart';
+import 'package:tutss_app/pages/homethree.dart';
+//import 'pages/home.dart';
 
 void main() => runApp(const MyApp());
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Tuts App',
       theme: ThemeData(primarySwatch: Colors.lightGreen),
-      home: const Home(),
+      home: const HomeThree(),
     );
   }
 }
