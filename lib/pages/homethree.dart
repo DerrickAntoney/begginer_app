@@ -63,7 +63,33 @@ class InputDecoratorsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row();
+    return Column(
+      children: <Widget> [
+        TextField(
+          keyboardType: TextInputType.text,
+          style: TextStyle(
+            color: Colors.grey.shade800,
+            fontSize: 16.0
+          ),
+          decoration: const InputDecoration(
+            hintText: 'Notes',
+            hintStyle: TextStyle(color: Colors.purple),
+            //helperText: 'Notes',
+            //helperStyle: TextStyle(color: Colors.purple)
+            //border: OutlineInputBorder()
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.purple),)
+          ),
+        ),
+        const Divider(
+          color: Colors.lightGreen,
+          height: 50.0,
+        ),
+        TextFormField(
+          decoration: const InputDecoration(hintText: 'Enter your notes'),
+        )
+      ],
+    );
   }
 }
 
