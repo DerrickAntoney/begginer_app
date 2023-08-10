@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'about.dart';
 
 class HomeThree extends StatefulWidget {
   const HomeThree({super.key});
@@ -64,22 +65,19 @@ class InputDecoratorsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget> [
+      children: <Widget>[
         TextField(
           keyboardType: TextInputType.text,
-          style: TextStyle(
-            color: Colors.grey.shade800,
-            fontSize: 16.0
-          ),
+          style: TextStyle(color: Colors.grey.shade800, fontSize: 16.0),
           decoration: const InputDecoration(
-            hintText: 'Notes',
-            hintStyle: TextStyle(color: Colors.purple),
-            //helperText: 'Notes',
-            //helperStyle: TextStyle(color: Colors.purple)
-            //border: OutlineInputBorder()
-            enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.purple),)
-          ),
+              hintText: 'Notes',
+              hintStyle: TextStyle(color: Colors.purple),
+              //helperText: 'Notes',
+              //helperStyle: TextStyle(color: Colors.purple)
+              //border: OutlineInputBorder()
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.purple),
+              )),
         ),
         const Divider(
           color: Colors.lightGreen,
@@ -94,14 +92,35 @@ class InputDecoratorsWidget extends StatelessWidget {
 }
 
 class _HomeThreeState extends State<HomeThree> {
+  static String _howAreYou = '...';
+  void _openPageAbout ({required BuildContext context, bool fullscreenDialog = false}) {
+    Navigator.push(context,
+    MaterialPageRoute(builder: (context) => const About(),),);
+
+  void _openPageGratitude(
+    {BuildContext context, bool fullscreenDialog = false}) async {
+    final String _gratitudeResponse = await Navigator.push(, route)
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+          onPressed: () => _openPageGratitude(context: context),
+          tooltip: 'About',
+          child: const Icon(Icons.sentiment_satisfied)),
       appBar: AppBar(
         title: const Text(
           'Images',
           textAlign: TextAlign.center,
         ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () =>
+                _openPageAbout(context: context, fullscreenDialog: true),
+            icon: const Icon(Icons.info_outline),
+          )
+        ],
         backgroundColor: Colors.blue,
       ),
       body: const SafeArea(
@@ -115,6 +134,11 @@ class _HomeThreeState extends State<HomeThree> {
                 BoxDecorationWidget(),
                 Divider(),
                 InputDecoratorsWidget(),
+                Divider(),
+                Text(
+                  'Grateful for: $_howAreYou',
+                  style: TextStyle(fontSize: 32.0),
+                ),
               ],
             ),
           ),
